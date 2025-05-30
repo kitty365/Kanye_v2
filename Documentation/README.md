@@ -1,9 +1,9 @@
-# Try to understand Kanye
+# KanyeRAG
 
 ## Project Description
 
-This project aims to interpret the thoughts, lyrics, tweets, and emotional patterns of Kanye West using Retrieval-Augmented Generation (RAG).  
-Through semantic search and clustering of various data sources (tweets, lyrics, biography, research), the goal is to philosophically explore Kanye's inner world.
+This project aims to interpret the thoughts, lyrics, tweets and emotional patterns of Kanye West using a Retrieval Augmented Generation system
+By applying semantic search and clustering across diverse sources such as tweets, lyrics, biographical texts and academic research, the system seeks to offer a philosophical perspective on Kanye’s inner world
 
 I chose this project because I find Kanye an interesting, controversal cultural figure with complex public perception and layered expression across media.
 
