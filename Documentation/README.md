@@ -23,7 +23,7 @@ I chose this project because I find Kanye an interesting, controversal cultural 
 |[Wiley Online Library](https://onlinelibrary.wiley.com/doi/epdf/10.1002/aps.1768)| Research Article|
 |[The World According To Kanye West](https://theworldaccordingtokanye.com)|Illustrated Biography|
 
-**Reason for choice**: This selection represents a basic but divers selection covering Kanye’s artistic, emotional, social, and intellectual expressions.
+**Reason for choice**: This collection represents a basic but diverse selection covering Kanye’s artistic, emotional, social, and intellectual expressions.
 
 ## Preprocessing & Chunking
 
@@ -50,6 +50,11 @@ because it balances multilingual capabilities, semantic quality, and performance
 - Model: `paraphrase-multilingual-MiniLM-L12-v2`
 - All chunks embedded into 384-dim vectors
 - FAISS index created and saved (`IndexFlatL2`)
+
+I initially used OpenAI’s text-embedding-3-small model for embedding. While the results were good, it was too expensive and not efficient for this setup. I replaced it with MiniLM from SentenceTransformers, which is free, fast, and works well with FAISS. This combination provides a stable and affordable solution for local use.
+
+>OPENAI Embedding:
+<pre> ```python load_dotenv() key = os.getenv("OPENAI_API_KEY") # PDFs pdf_paths = { "biography": "Input/Biography.pdf", "psychoanalysis": "Input/Psychoanalytics.pdf", "twak": "Input/TWAK.pdf" } # CSVs lyrics_path = "Input/LyricsWest.csv" tweets_path = "Input/KanyeTweets.csv" # PDF's und CSV's laden def load_pdf_text(file_path): doc = fitz.open(file_path) return "\n".join([page.get_text() for page in doc]) pdf_texts = {name: load_pdf_text(path) for name, path in pdf_paths.items()} lyrics_df = pd.read_csv(lyrics_path) tweets_df = pd.read_csv(tweets_path) ``` </pre>
 
 ### Retrieval Function
 - Queries encoded & top-k (default: 10) nearest chunks retrieved
@@ -124,7 +129,6 @@ I tested the system with around 10 questions about Kanye’s life, music, emotio
 
 ## Results
 
-This project showed how important good data preparation is for a RAG system. I noticed that cleaning and structuring data, especially tweets, has a big effect on the results. The project is not finished and can be improved in many ways, for example by better handling tweets or adding smarter logic.
-At first I used OpenAI models, but they were too expensive and limited in context length. I then switched to Groq with LLaMA 3, which worked better. The system is model-agnostic and could use other models in the future, depending on needs and resources.
-The Gradio app works well so far. It gives good answers to Kanye-related questions and blocks off-topic ones.
+This project showed how important good data preparation is for a RAG system. I noticed that cleaning and structuring data, especially tweets, has a big effect on the results. I began with OpenAI models, which performed well but were too costly and prone to hallucinations. Switching to LLaMA 3 on Groq significantly improved speed and stability. The project is not finished and can be improved in many ways, for example by better handling tweets or adding smarter logic, expanding the queries deeper and testing for better results. The Gradio app works well so far. It provides solid answers to Kanye-related questions and effectively blocks off-topic queries.
+
 
