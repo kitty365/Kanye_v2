@@ -12,7 +12,7 @@ I chose this project because I find Kanye West an interesting, controversal cult
 |    URL       | Name |
 |---------------|-----|
 |[Github Repository](https://github.com/kitty365/Kanye_v2)| Github Repository|
-|[Hugging Face](https://huggingface.co/spaces/kitty365/kanye?logs=container)| Hugging Face |
+|[Hugging Face](https://huggingface.co/spaces/kitty365/kanye)| Hugging Face |
 
 ## Data Sources
 | Data Source   | Description |
