@@ -5,9 +5,9 @@
 This project aims to interpret the thoughts, lyrics, tweets and emotional patterns of Kanye West using a Retrieval Augmented Generation system
 By applying semantic search and clustering across diverse sources such as tweets, lyrics, biographical texts and academic research, the system seeks to offer a philosophical perspective on Kanye’s inner world
 
-I chose this project because I find Kanye an interesting, controversal cultural figure with complex public perception and layered expression across media.
+I chose this project because I find Kanye West an interesting, controversal cultural figure with complex public perception and layered expression across media.
 
-### Name & URL
+### URL & Name
 
 |    URL       | Name |
 |---------------|-----|
