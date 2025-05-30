@@ -124,8 +124,3 @@ The evaluation focused on answer depth, contextual fit, and semantic precision.
 
 ## Results
 
-| Model/Method                            | Accuracy | Precision | Recall |
-|----------------------------------------|----------|-----------|--------|
-| Retrieved chunks with expansion        | –        | –         | –      |
-| Generated answer based on expanded RAG | –        | –         | –      |
-
