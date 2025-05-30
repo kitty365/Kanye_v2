@@ -11,8 +11,8 @@ I chose this project because I find Kanye an interesting, controversal cultural 
 
 | Name          | URL |
 |---------------|-----|
-|[Github Repository]()| Github Repository|
-|[Hugging Face]()| Hugging Face |
+|[Github Repository](https://github.com/kitty365/Kanye_v2)| Github Repository|
+|[Hugging Face](https://huggingface.co/spaces/kitty365/kanye?logs=container)| Hugging Face |
 
 ## Data Sources
 | Data Source   | Description |
@@ -23,7 +23,7 @@ I chose this project because I find Kanye an interesting, controversal cultural 
 |[Wiley Online Library](https://onlinelibrary.wiley.com/doi/epdf/10.1002/aps.1768)| Research Article|
 |[The World According To Kanye West](https://theworldaccordingtokanye.com)|Illustrated Biography|
 
-**Reason for choice**: This selection represents a rich, multimodal corpus covering Kanye’s artistic, emotional, social, and intellectual expressions.
+**Reason for choice**: This selection represents a basic but divers selection covering Kanye’s artistic, emotional, social, and intellectual expressions.
 
 ## Preprocessing & Chunking
 
@@ -97,6 +97,7 @@ To address the limited information, the system was enhanced with **semantic quer
 
 This improvement increased the **robustness**, **coverage**, and **depth** of the generated answers — especially for abstract or interpretive topics like religion, mental health, or family dynamics in Kanye's work.
 
+Even if a question cannot be fully answered, for example "How is his relationship with North?", the system still provides a meaningful and context-aware response. It confirms, for instance, that North is his daughter.
 
 ## RAG Improvements
 
@@ -107,9 +108,7 @@ This improvement increased the **robustness**, **coverage**, and **depth** of th
 | `Query Rewriting`     | (Planned) Reformulates vague user questions into clearer ones               |
 | `Result Reranking`    | (Planned) Reranks top chunks based on secondary relevance criteria          |
 
-
-
-
+This refinement makes the system more reliable when facing ambiguous or abstract questions and significantly enhances the user experience. It also aligns with the project's goal of offering deeper insight rather than superficial answers.
 
 ## Choice of LLM
 
@@ -117,10 +116,15 @@ This improvement increased the **robustness**, **coverage**, and **depth** of th
 |---------------------|------|
 | LLaMA 3 (70B, 8192) | [Groq Platform](https://groq.com) |
 
+I chose LLaMA 3 on Groq because it is fast, powerful, and free to use. It handles longer contexts well and fits the needs of this RAG setup better than smaller or more expensive models.
+
 ## Test Method
 
-Test data consisted of 10 carefully designed user questions related to Kanye West's themes, emotions, and artistic intentions.  
-The evaluation focused on answer depth, contextual fit, and semantic precision.
+I tested the system with around 10 questions about Kanye’s life, music, emotions, and beliefs. I checked if the answers were relevant, correct, and if off-topic questions were rejected. The testing is still very basic and could be expanded much more in the future.
 
 ## Results
+
+This project showed how important good data preparation is for a RAG system. I noticed that cleaning and structuring data, especially tweets, has a big effect on the results. The project is not finished and can be improved in many ways, for example by better handling tweets or adding smarter logic.
+At first I used OpenAI models, but they were too expensive and limited in context length. I then switched to Groq with LLaMA 3, which worked better. The system is model-agnostic and could use other models in the future, depending on needs and resources.
+The Gradio app works well so far. It gives good answers to Kanye-related questions and blocks off-topic ones.
 
